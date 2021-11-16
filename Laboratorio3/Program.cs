@@ -1,0 +1,54 @@
+﻿//Alocar, inicializar e acessar dados em uma Lista
+List<string> listaStrings = new List<string>();
+Console.WriteLine(listaStrings.Count);
+
+listaStrings.Add("Alô");
+listaStrings.Add("Mundo");
+listaStrings.Add("!");
+
+Console.WriteLine(listaStrings.Count);
+Console.WriteLine(listaStrings[0]);
+
+//listaStrings.Add(10);
+
+listaStrings[0] = "Hola";
+
+var achei = listaStrings.Find(s => s.StartsWith("M"));
+Console.WriteLine(achei);
+var listaImutavel = listaStrings.AsReadOnly();
+foreach (var item in listaImutavel)
+{
+    Console.WriteLine(item);
+}
+
+//Alocar, inicializar e acessar dados em uma fila
+Queue<Object> minhaFila = new Queue<Object>();
+q.Enqueue(".Net Framework");
+q.Enqueue(new Decimal(123.456));
+q.Enqueue(654.321);
+Console.WriteLine(q.Dequeue());
+Console.WriteLine(q.Dequeue());
+Console.WriteLine(q.Dequeue());
+
+
+Queue<int> minhaFila = new Queue<int>();
+minhaFila.Enqueue(10);
+minhaFila.Enqueue(200);
+minhaFila.Enqueue(1000);
+Console.WriteLine(minhaFila.Dequeue());
+Console.WriteLine(minhaFila.Dequeue());
+Console.WriteLine(minhaFila.Dequeue());
+
+
+
+//Manipulando dicionários genéricos
+Dictionary<int,string> paises = new Dictionary<int,string>();
+paises[44] = "Reino Unido";
+paises[33] = "França";
+paises[55] = "Brasil";
+Console.WriteLine($"O código 55 é {paises[55]}");
+paises.Keys.ToList().ForEach(Console.WriteLine);
+foreach (var item in paises)
+{
+    Console.WriteLine($"Código {item.Key} = {item.Value}");
+}

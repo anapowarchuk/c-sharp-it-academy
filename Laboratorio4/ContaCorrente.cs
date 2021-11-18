@@ -1,6 +1,6 @@
 //criando classes
 public class ContaCorrente{
-    private decimal saldo;
+    private decimal saldo; 
 
     public ContaCorrente(decimal valor, string? cpf)
     {
@@ -24,14 +24,15 @@ public class ContaCorrente{
     }
 
     //propriedade de leitura
-    public decimal Saldo
+    public decimal Saldo //propriedade publica do tipo decimal
     {
-        get
+        get //leitura de valor
         {
             return saldo;
         }
     }
 
-    public DateTime DataAbertura { get; }
-    public string? CpfTitular { get; set; }
+    public DateTime DataAbertura { get; } //auto implementada
+    public string? CpfTitular { get; set; } //propriedade nao eh obrigatoria
+    //propriedade publica do tipo string que faz leitura e escrita
 }

@@ -13,16 +13,18 @@ Console.WriteLine(listaStrings[0]);
 
 listaStrings[0] = "Hola";
 
-var achei = listaStrings.Find(s => s.StartsWith("M"));
-Console.WriteLine(achei);
-var listaImutavel = listaStrings.AsReadOnly();
+Console.WriteLine("------------------------------------");
+
+var achei = listaStrings.Find(s => s.StartsWith("M")); //metodo anomimo que busca algo na lista
+var listaImutavel = listaStrings.AsReadOnly(); //metodo que retorna uma lista de leitura
 foreach (var item in listaImutavel)
 {
     Console.WriteLine(item);
 }
 
+Console.WriteLine("------------------------------------");
 //Alocar, inicializar e acessar dados em uma fila
-Queue<Object> minhaFila = new Queue<Object>();
+Queue<Object> q  = new Queue<Object>();
 q.Enqueue(".Net Framework");
 q.Enqueue(new Decimal(123.456));
 q.Enqueue(654.321);
@@ -30,7 +32,7 @@ Console.WriteLine(q.Dequeue());
 Console.WriteLine(q.Dequeue());
 Console.WriteLine(q.Dequeue());
 
-
+Console.WriteLine("------------------------------------");
 Queue<int> minhaFila = new Queue<int>();
 minhaFila.Enqueue(10);
 minhaFila.Enqueue(200);
@@ -40,6 +42,7 @@ Console.WriteLine(minhaFila.Dequeue());
 Console.WriteLine(minhaFila.Dequeue());
 
 
+Console.WriteLine("------------------------------------");
 
 //Manipulando dicionários genéricos
 Dictionary<int,string> paises = new Dictionary<int,string>();

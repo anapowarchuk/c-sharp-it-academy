@@ -1,5 +1,5 @@
 ﻿ContaCorrente c = new ContaCorrente(1M, "12345678901");
-c.Depositar(100.50M);
+c.Depositar(100.50M); //M  - decimal
 c.Sacar(10M);
 Console.WriteLine(c.Saldo);
 Console.WriteLine(c.DataAbertura);

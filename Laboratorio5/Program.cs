@@ -6,6 +6,7 @@ Console.WriteLine(c2.ToString());
 
 Circulo c3 = new CirculoColorido(2,3,1,"amarelo");
 Console.WriteLine(c3.ToString());
+//Console.WriteLine (((CirculoColorido)c3).ToString()); //convertendo para circulo colorido
 
 Circulo c4 = c2;
 

@@ -6,25 +6,22 @@ para o segundo
 
 int [] array1 = new int [10];
 int [] array2 = new int[10];
-int i = 0;
-
 
 Random randNum = new Random();
 
-
-foreach (var x in array1) {
-   x = randNum.Next();
-} 
+for (int i = 0 ; i<5; i++) {
+     array1[i] = randNum.Next();
+}
 
  Console.WriteLine("ARRAY 1");
 foreach (var x in array1) {
     Console.Write("| "+ x + " |");
 } 
 
-
+int cont = 0;
 foreach (var x in array1) {
-    array2[i] = x;
-    i++;
+    array2[cont] = x;
+    cont++;
 } 
 
  Console.WriteLine("ARRAY 2");
@@ -38,13 +35,8 @@ de cada coluna. Apresente duas versões para o programa: multidimensional e arra
 */
 
 int [,] matriz = new int[5,5];
-Random randNum = new Random();
 
-for (int i = 0 ; i<5; i++) {
-    for (int j = 0 ; j<5; i++) {
-        matriz[i, j] = randNum.Next();
-    }
-}
+
 
 int soma = 0;
 for (int j = 0 ; j<5; j++) {

@@ -1,6 +1,6 @@
 public class Circulo
 {
-    public double Raio { get; set; }
+    public double Raio { get; set; } //auto gerada
     public double CoordX { get; set; }
     public double CoordY { get; set; }
     /**
@@ -21,12 +21,13 @@ public class Circulo
         CoordY = y;
     }
     
+    //construtor
     public Circulo()
     : this(1, 0, 0)
     {
     }
     
-
+    // sobreescrita do metodo herdado
     public override string ToString()
     {
         return base.ToString() + $"({CoordX},{CoordY}) raio={Raio}";
@@ -36,11 +37,15 @@ public class Circulo
 public class CirculoColorido : Circulo
 {
     public string Cor { get; set; }
+
+    // chamando o construtuor da superclasse : base
     public CirculoColorido(double r, double x, double y, string c)
-    : base(r, x, y)
+    : base(r, x, y) 
     {
         Cor = c;
     }
+
+    //polimorfismo
     override public string ToString()
     {
         return base.ToString() + $" cor={Cor}";

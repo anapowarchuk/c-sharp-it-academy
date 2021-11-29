@@ -14,7 +14,7 @@ public class UmaClasseQualquer{
         return f(x,x);
     }
 
-    public static Func<int, int> ControiMetodo(){ //cria um metodo que devolve outro metodo
+    public static Func<int, int> ControiMetodo(int x){ //cria um metodo que devolve outro metodo
         return (int y) => x + y;
     }
 }

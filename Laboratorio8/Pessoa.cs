@@ -1,4 +1,4 @@
-public class Pessoa : IComparable<Pessoa> //ordem natural delas
+public class Pessoa : IComparable<Pessoa>
 {
     public string Nome { get; set; }
     public int Idade { get; set; }

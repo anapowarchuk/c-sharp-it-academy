@@ -1,1 +1,1 @@
-public record Pessoa (string nome, int idade); //criou tipo referência - tipo baseado em uma classe
+public record Pessoa (string Nome, int Idade); //criou tipo referência - tipo baseado em uma classe

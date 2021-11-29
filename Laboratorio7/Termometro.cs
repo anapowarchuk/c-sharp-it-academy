@@ -7,7 +7,7 @@ public class Termometro
     public virtual void Diminuir(double graus) => temperatura -= graus;
 }
 
-public class TermometroEletrico : Termometro, EstadoBinario
+public class TermometroEletrico : Termometro, IEstadoBinario
 {
     private bool ligado;
     public EstadoBinario Estado => ligado ? EstadoBinario.Ligado : EstadoBinario.Desligado;

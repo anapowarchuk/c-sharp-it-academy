@@ -17,6 +17,8 @@ foreach (var p in linq1){
 var linq2 = pessoas.Where(p => p.Casada && p.DataNascimento >= new DateTime(1980, 1, 1));
 linq2.ToList().ForEach(p => Console.WriteLine(p));
 
+
+// retorna o nome das pessoas casadas
 //var linq3 = pessoas.Where((p, i) => p.Nome.StartsWith('A'));
 var linq3 = from p in pessoas
         where !p.Casada
@@ -25,10 +27,12 @@ foreach (var p in linq3){
     Console.WriteLine(p);
 }
 
+// pessoas casadas
 var linq3v2 = pessoas
         .Where (p => !p.Casada)
         .Select(p => p.Nome);
 
+//retorna o nome e a data de nasc dos casados
 var linq4 =  from p in pessoas
     where p.Casada
     select new {p.Nome, p.DataNascimento};
@@ -37,7 +41,7 @@ foreach (var p in linq4){
     Console.WriteLine($"Nome={p.Nome} DataNascimento={p.DataNascimento.ToShortDateString()}");
 }
 
-//oedenação simpla e múltipla
+//oedenação simpla e múltipla  - retorna em ordem decrescente a data de nascimento e o nome
 var linq5 = from p in pessoas
             orderby p.DataNascimento descending, p.Nome
             select p;
@@ -45,13 +49,16 @@ foreach (var p in linq5)
 {
     Console.WriteLine(p);
 }
+
+//retorna em ordem decrescente a idade das pessoas
 var linq5v2 = pessoas
               .OrderByDescending(p => p.DataNascimento)
               .ThenBy(p => p.Nome);
 
+//agrupamento por group by - particionar solteiros e casados
 var linq6 = from p in pessoas
             group p by p.Casada into grupo
-            select new { Casados = grupo.Key, Pessoas = grupo };
+            select new { Casados = grupo.Key, Pessoas = grupo }; //grupo anonimo que divide em duas partes
 foreach (var agrupamento in linq6)
 {
     Console.WriteLine($"Casados={agrupamento.Casados}");
@@ -60,3 +67,4 @@ foreach (var agrupamento in linq6)
         Console.WriteLine($"\t{p}");
     }
 }
+
